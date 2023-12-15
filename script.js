@@ -1,4 +1,6 @@
- const phrase = "Good morning Ma, Ma please i want to inform you of my plans for the moment, Am intending to start learning js frameWorks by March 2024, reason being that from 8 jan, i will be writing my Main Second semester exam and it will be taking 2 weeks and i want to use my second semester holiday, to really practice alot of js projects especially this Api thing, so by God's grace march, i will start learning the frameworks..... Don't be offended ma, Am doing this, so i can get to really understand the language and myself via practice hours very well.....Thanks for understanding ";
+const btn = document.getElementById("btn");
+
+const phrase = "Good morning Ma, Ma please i want to inform you of my plans for the moment, Am intending to start learning js frameWorks by March 2024, reason being that from 8 jan, i will be writing my Main Second semester exam and it will be taking 2 weeks and i want to use my second semester holiday, to really practice alot of js projects especially this Api thing, so by God's grace march, i will start learning the frameworks..... Don't be offended ma, Am doing this, so i can get to really understand the language and myself via practice hours very well.....Thanks for understanding ";
     const container = document.getElementById("letter-container");
 
     function displayLetters() {
@@ -25,5 +27,24 @@
         index++;
       }, 100);
     }
-
     displayLetters();
+
+    const ReadAm = () => {
+      let words = phrase;
+      console.log(words);
+
+      const wordToRead = new SpeechSynthesisUtterance();
+  
+      wordToRead.text = words;
+
+      console.log( wordToRead);
+
+      window.speechSynthesis.speak(wordToRead)
+      window.speechSynthesis.rate(2)
+
+    }
+   
+    btn.addEventListener("click", () => {
+      ReadAm();
+    } )
+  

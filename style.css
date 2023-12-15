@@ -1,3 +1,21 @@
+* {
+  margin: 0;
+}
+
+body {
+  background-color: black;
+  color: #bebe;
+}
+
+.page-container,
+.page-content,
+.page-itself,
+.letter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .letter {
   display: inline-block;
   opacity: 0;
@@ -8,12 +26,39 @@
   display: inline-block;
   width: 0.5em; /* Adjust the width as desired */
 }
-
+  input[type="button"]{
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    background-color: #bebe;
+    color: #fff;
+  }
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .page-container,
+  .page-content,
+  .page-itself,
+  .letter-container {
+    display: block;
+    text-align: center;
+  }
+
+  input[type="button"] {
+    width: 80px;
+    height: 25px;
+    font-size: 16px;
   }
 }
